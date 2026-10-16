@@ -1,3 +1,25 @@
+Entrepreneurship Skills: licensing
+
+This repository is licensed in two parts.
+
+1. SKILLS: everything under skills/
+
+   Copyright (c) 2026 Alexey Fedorov
+
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at https://mozilla.org/MPL/2.0/. The full
+   text is in skills/LICENSE.
+
+2. TEMPLATE: everything else (scripts, workflows, tests, validators,
+   manifests, and docs), derived from coreyhaines31/marketingskills
+
+   Licensed under the MIT License below. The notice and permission text
+   apply to the template files and must be kept with any copy or
+   substantial portion of them.
+
+-------------------------------------------------------------------------
+
 MIT License
 
 Copyright (c) 2026 Alexey Fedorov

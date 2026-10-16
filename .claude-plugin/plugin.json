@@ -7,6 +7,6 @@
   },
   "homepage": "https://github.com/alexey-max-fedorov/entrepreneurship-skills",
   "repository": "https://github.com/alexey-max-fedorov/entrepreneurship-skills",
-  "license": "MIT",
+  "license": "MIT AND MPL-2.0",
   "skills": "./skills"
 }

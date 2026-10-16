@@ -1,6 +1,6 @@
 # Single-skill release ZIPs
 
-Release assets provide a download path for people using Claude without a terminal-based agent. Each ZIP contains one named skill folder, its instructions, authored references/scripts/assets, and the repository's MIT license. Evals, caches, untracked files, and the rest of the repository are excluded.
+Release assets provide a download path for people using Claude without a terminal-based agent. Each ZIP contains one named skill folder, its instructions, authored references/scripts/assets, and the repository's `LICENSE` file (MPL-2.0 for the skills, MIT for the template). Evals, caches, untracked files, and the rest of the repository are excluded.
 
 ## Use a release asset in Claude
 

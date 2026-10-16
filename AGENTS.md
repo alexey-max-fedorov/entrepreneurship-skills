@@ -9,7 +9,7 @@ This repository contains **Agent Skills** for AI agents following the [Agent Ski
 - **Name**: Entrepreneurship Skills
 - **GitHub**: [alexey-max-fedorov/entrepreneurship-skills](https://github.com/alexey-max-fedorov/entrepreneurship-skills)
 - **Creator**: Alexey Fedorov
-- **License**: MIT
+- **License**: MPL-2.0 for `skills/`, MIT for the template (see `LICENSE`)
 
 ## Repository Structure
 

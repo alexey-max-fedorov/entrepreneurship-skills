@@ -68,6 +68,10 @@ skills/your-skill-name/
 4. Bump `metadata.version` in the SKILL.md and the `VERSIONS.md` row, and bump the repo version (see `AGENTS.md`)
 5. Run `node scripts/check-versions.mjs`
 
+## Licensing
+
+Contributions under `skills/` are licensed MPL-2.0 (see `skills/LICENSE`). Contributions to the rest of the repository are MIT.
+
 ## Submitting Your Contribution
 
 1. Fork the repository

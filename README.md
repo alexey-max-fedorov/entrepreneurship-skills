@@ -64,4 +64,4 @@ node scripts/check-versions.mjs
 
 ## License
 
-[MIT](LICENSE)
+Skills (`skills/`) are [MPL-2.0](skills/LICENSE). The template scaffolding around them is MIT, derived from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills). See [LICENSE](LICENSE).
