@@ -1,0 +1,20 @@
+{
+  "name": "entrepreneurship-skills",
+  "interface": {
+    "displayName": "Entrepreneurship Skills"
+  },
+  "plugins": [
+    {
+      "name": "entrepreneurship-skills",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Entrepreneurship"
+    }
+  ]
+}

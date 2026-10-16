@@ -1,0 +1,10 @@
+{
+  "alpha": {
+    "source_description_sha256": "f33eb7efa2a444709ac987fc9efadb535d2ab7b9239272cfd072c5648574bf69",
+    "description": "Placeholder alpha skill: replace with a one-sentence summary of what alpha does and when to use it."
+  },
+  "beta": {
+    "source_description_sha256": "88633f2758430a99a92bcef1dc35638359e2140bfd5c2072db1cd7d41ada8288",
+    "description": "Placeholder beta skill: replace with a one-sentence summary of what beta does and when to use it."
+  }
+}

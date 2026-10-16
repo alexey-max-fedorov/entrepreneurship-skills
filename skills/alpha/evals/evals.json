@@ -1,0 +1,24 @@
+{
+  "skill_name": "alpha",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "[TODO: a realistic, detailed user request that should trigger alpha]",
+      "expected_output": "[TODO: describe what a good response contains and the order it happens in]",
+      "assertions": [
+        "[TODO: checks for the shared context file first]",
+        "[TODO: follows the workflow]"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "[TODO: the same request in casual, lowercase phrasing]",
+      "expected_output": "[TODO: should still trigger alpha on casual phrasing]",
+      "assertions": [
+        "[TODO: triggers on casual phrasing]"
+      ],
+      "files": []
+    }
+  ]
+}
