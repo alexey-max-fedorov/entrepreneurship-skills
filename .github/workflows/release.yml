@@ -1,16 +1,13 @@
-name: Release on version bump
+name: Release (manual)
 
-# Auto-creates a git tag + GitHub Release whenever the repo version in
-# .claude-plugin/plugin.json changes on master. Release notes are pulled from
+# Manual only. Run from the Actions tab to create a git tag + GitHub Release for
+# the repo version in .claude-plugin/plugin.json. Release notes are pulled from
 # the matching `### x.y.z` block in VERSIONS.md. Re-runs retain the existing
 # tag's commit and replace only the named ZIP/manifest release assets.
+# It no longer fires on pushes: releases are cut by hand (signed tags).
 
 on:
-  push:
-    branches: [master]
-    paths:
-      - ".claude-plugin/plugin.json"
-      - "VERSIONS.md"
+  workflow_dispatch:
 
 permissions:
   contents: write
