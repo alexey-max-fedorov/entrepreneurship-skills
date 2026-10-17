@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Model Canvas</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f4f3ef;
+    --paper: #ffffff;
+    --ink: #1d2127;
+    --muted: #5b616a;
+    --line: #cfd3d8;
+    --line-strong: #1d2127;
+    --front: #a8604a;
+    --back: #3d434c;
+    --meet: #4b8a2c;
+    --note: #f6f6f4;
+    --a-ink: #6e5100;
+    --a-bg: #fff0b8;
+    --e-ink: #15623a;
+    --e-bg: #d9f1e2;
+    --t-ink: #9e1f1f;
+    --t-bg: #fddcdc;
+    --focus: #2f6fde;
+    --btn: #ffffff;
+    --btn-ink: #1d2127;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #15171a;
+      --paper: #1e2125;
+      --ink: #e8eaed;
+      --muted: #a2a8b0;
+      --line: #3a3f46;
+      --line-strong: #8d939b;
+      --front: #d9917a;
+      --back: #b4bcc7;
+      --meet: #8cc76a;
+      --note: #262a2f;
+      --a-ink: #f2d36b;
+      --a-bg: #3a3110;
+      --e-ink: #7fd9a2;
+      --e-bg: #123321;
+      --t-ink: #ff9b9b;
+      --t-bg: #3d1717;
+      --focus: #7aa7ff;
+      --btn: #262a2f;
+      --btn-ink: #e8eaed;
+    }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { max-width: 1520px; margin: 0 auto; padding: 16px clamp(16px, 2vw, 28px) 40px; }
+
+  /* Toolbar */
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  h1 { font-size: 22px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  button {
+    font: inherit; cursor: pointer; color: var(--btn-ink); background: var(--btn);
+    border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px;
+  }
+  button:hover { border-color: var(--line-strong); }
+  button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  button[aria-pressed="false"] { color: var(--muted); }
+  button.armed { background: var(--t-bg); color: var(--t-ink); border-color: var(--t-ink); }
+
+  /* Header fields */
+  .meta { display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .meta label { display: flex; flex-direction: column; gap: 3px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+  .meta input {
+    font: inherit; font-size: 14px; font-weight: 400; letter-spacing: 0; text-transform: none;
+    color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; min-width: 0;
+  }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: flex-start; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .legend .item { display: flex; gap: 6px; align-items: baseline; }
+  .legend b { color: var(--ink); font-weight: 600; }
+  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; transform: translateY(1px); }
+  .hint { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+
+  /* Canvas grid */
+  .canvas {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-areas:
+      "kp kp ka ka vp vp cr cr cs cs"
+      "kp kp kr kr vp vp ch ch cs cs"
+      "co co co co co rv rv rv rv rv";
+    gap: 1px; background: var(--line-strong); border: 2px solid var(--line-strong); border-radius: 4px; overflow: hidden;
+  }
+  .block { background: var(--paper); padding: 10px 10px 8px; display: flex; flex-direction: column; min-height: 240px; min-width: 0; }
+  .block.tall { min-height: 481px; }
+  .block.wide { min-height: 200px; }
+  .bh { display: flex; align-items: center; gap: 8px; border-left: 4px solid var(--back); padding-left: 8px; margin-bottom: 6px; }
+  .block[data-area="front"] .bh { border-color: var(--front); }
+  .block[data-area="meet"] .bh { border-color: var(--meet); }
+  .num {
+    flex: none; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%;
+    font-size: 11px; font-weight: 700; color: var(--paper); background: var(--back);
+  }
+  .block[data-area="front"] .num { background: var(--front); }
+  .block[data-area="meet"] .num { background: var(--meet); }
+  .bh h2 { font-size: 14px; margin: 0; line-height: 1.25; }
+  .q { margin: 0 0 8px; padding-left: 16px; font-size: 11.5px; line-height: 1.4; color: var(--muted); }
+  .q li { margin: 1px 0; }
+  body.hide-q .q { display: none; }
+
+  /* Entries */
+  .list { display: flex; flex-direction: column; gap: 4px; }
+  .note { display: flex; gap: 6px; align-items: flex-start; background: var(--note); border-radius: 6px; padding: 4px 4px 4px 5px; }
+  .tag {
+    flex: none; width: 22px; height: 20px; padding: 0; margin-top: 1px; border-radius: 4px; border: 1px solid transparent;
+    font-size: 11px; font-weight: 700; line-height: 18px; text-align: center;
+  }
+  [data-status="A"] .tag { background: var(--a-bg); color: var(--a-ink); border-color: var(--a-ink); }
+  [data-status="E"] .tag { background: var(--e-bg); color: var(--e-ink); border-color: var(--e-ink); }
+  [data-status="T"] .tag { background: var(--t-bg); color: var(--t-ink); border-color: var(--t-ink); }
+  .legend .tag { display: inline-block; flex: none; }
+  .note textarea {
+    flex: 1; min-width: 0; resize: none; overflow: hidden; border: 0; background: transparent; color: inherit;
+    font: inherit; font-size: 13px; line-height: 1.4; padding: 2px 0; min-height: 22px;
+  }
+  .note textarea:focus-visible { outline: none; }
+  .note:focus-within { box-shadow: 0 0 0 2px var(--focus); }
+  .del {
+    flex: none; width: 20px; height: 20px; padding: 0; border: 0; background: transparent; color: var(--muted);
+    font-size: 16px; line-height: 20px; opacity: 0;
+  }
+  .note:hover .del, .note:focus-within .del { opacity: 1; }
+  @media (hover: none) { .del { opacity: 1; } }
+  .add {
+    margin-top: 6px; align-self: flex-start; border-style: dashed; color: var(--muted); background: transparent;
+    font-size: 12px; padding: 4px 8px;
+  }
+
+  /* Assessment */
+  .assessment { margin-top: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px 16px; }
+  .assessment h2 { font-size: 16px; margin: 0 0 4px; }
+  .assessment .sub { margin: 0 0 12px; font-size: 12px; color: var(--muted); }
+  .factors { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px 20px; }
+  .factor { border-top: 1px solid var(--line); padding-top: 8px; min-width: 0; }
+  .fhead { display: flex; align-items: center; gap: 8px; }
+  .fname { font-weight: 600; flex: 1; }
+  .factor output { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 2ch; text-align: right; }
+  .unscore { font-size: 11px; padding: 1px 6px; color: var(--muted); }
+  .factor.unscored .unscore { visibility: hidden; }
+  .factor input[type="range"] { width: 100%; margin: 6px 0 2px; accent-color: var(--back); }
+  .factor.unscored input[type="range"] { opacity: 0.45; }
+  .anchors { display: flex; justify-content: space-between; gap: 12px; font-size: 11.5px; color: var(--muted); line-height: 1.35; }
+  .anchors span:last-child { text-align: right; }
+  .anchors b { color: var(--ink); }
+  .evidence {
+    width: 100%; margin-top: 6px; font: inherit; font-size: 12.5px; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 5px; padding: 5px 7px;
+  }
+  .total { margin-top: 14px; font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+
+  /* Footer + fallback */
+  .foot { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: space-between; font-size: 12px; color: var(--muted); }
+  .fallback { margin-top: 14px; background: var(--paper); border: 1px solid var(--line-strong); border-radius: 6px; padding: 12px; }
+  .fallback p { margin: 0 0 8px; }
+  .fallback textarea { width: 100%; min-height: 220px; font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 8px; }
+
+  /* Narrow screens: stack blocks in fill order */
+  @media screen and (max-width: 880px) {
+    .meta { grid-template-columns: 1fr 1fr; }
+    .canvas { grid-template-columns: minmax(0, 1fr); grid-template-areas: "cs" "vp" "ch" "cr" "rv" "kr" "ka" "kp" "co"; }
+    .block, .block.tall, .block.wide { min-height: 0; }
+  }
+
+  /* Print: landscape canvas, light ink, no controls */
+  @media print {
+    @page { size: landscape; margin: 8mm; }
+    :root {
+      color-scheme: light;
+      --bg: #ffffff; --paper: #ffffff; --ink: #000000; --muted: #444444; --line: #999999; --line-strong: #000000;
+      --front: #a8604a; --back: #3d434c; --meet: #4b8a2c; --note: #ffffff;
+      --a-ink: #6e5100; --a-bg: #ffffff; --e-ink: #15623a; --e-bg: #ffffff; --t-ink: #9e1f1f; --t-bg: #ffffff;
+    }
+    body { font-size: 11px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .wrap { max-width: none; padding: 0; }
+    .actions, .add, .del, .unscore, .hint, .foot, .fallback, .evidence:placeholder-shown { display: none !important; }
+    .toolbar { margin-bottom: 6px; }
+    .meta input { border: 0; border-bottom: 1px solid #999; border-radius: 0; padding: 2px 0; }
+    .block { min-height: 190px; break-inside: avoid; }
+    .block.tall { min-height: 381px; }
+    .block.wide { min-height: 150px; }
+    .note { background: none; border: 1px solid #bbb; }
+    .note textarea { font-size: 11px; }
+    .q { font-size: 9.5px; }
+    .assessment { break-before: page; border: 0; padding: 0; }
+    .factor input[type="range"] { display: none; }
+    .factor.unscored output::after { content: " (not scored)"; font-weight: 400; color: #444; }
+    .evidence { border: 0; padding: 2px 0; background: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="toolbar">
+    <h1>Business Model Canvas</h1>
+    <div class="actions" role="toolbar" aria-label="Canvas actions">
+      <button type="button" id="toggleQ" aria-pressed="true">Guiding questions</button>
+      <button type="button" id="exportMd">Export Markdown</button>
+      <button type="button" id="copyMd">Copy Markdown</button>
+      <button type="button" id="exportJson">Export JSON</button>
+      <button type="button" id="importJson">Import JSON</button>
+      <button type="button" id="printBtn">Print</button>
+      <button type="button" id="clearBtn">Clear</button>
+      <input type="file" id="fileInput" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <section class="meta" aria-label="Canvas details">
+    <label>Designed for<input type="text" data-meta="designedFor" autocomplete="off"></label>
+    <label>Designed by<input type="text" data-meta="designedBy" autocomplete="off"></label>
+    <label>Date<input type="date" data-meta="date"></label>
+    <label>Version<input type="text" data-meta="version" autocomplete="off"></label>
+  </section>
+
+  <div class="legend" id="legend">
+    <span class="item"><span class="swatch" style="background:var(--back)"></span><span><b>Backstage</b> · All about the solution: how we produce our solution</span></span>
+    <span class="item"><span class="swatch" style="background:var(--meet)"></span><span><b>Where they meet</b> · The value proposition connects them</span></span>
+    <span class="item"><span class="swatch" style="background:var(--front)"></span><span><b>Front stage</b> · All about the customer: how we interact with customers</span></span>
+  </div>
+  <div class="legend" id="statusLegend"></div>
+  <p class="hint">Enter adds the next entry · Shift+Enter starts a new line · Backspace on an empty entry removes it · Click a tag to change its status</p>
+
+  <main class="canvas" id="canvas" aria-label="Business Model Canvas"></main>
+
+  <section class="assessment" aria-labelledby="assessTitle">
+    <h2 id="assessTitle">Business Model Assessment</h2>
+    <p class="sub">Score the model on seven factors, each from 0 to 10, with evidence. Use the scores to compare candidate models and to find the weakest factor to redesign.</p>
+    <div class="factors" id="factors"></div>
+    <div class="total" id="total"></div>
+  </section>
+
+  <div class="fallback" id="fallback" hidden>
+    <p id="fallbackMsg">Your browser blocked the download or clipboard. Select all the text below and copy it.</p>
+    <textarea id="fallbackText" readonly aria-label="Export text"></textarea>
+    <p><button type="button" id="fallbackClose">Close</button></p>
+  </div>
+
+  <footer class="foot">
+    <span id="status" role="status" aria-live="polite"></span>
+    <span>Autosaves in this browser only. Export JSON to back up or move your canvas.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'business-model-canvas:v1';
+  var STATUS_ORDER = ['A', 'E', 'T'];
+  var STATUS = {
+    A: { label: 'Assumed', desc: 'Our best guess, written down so it can be tested' },
+    E: { label: 'Supported by evidence', desc: 'Backed by something observed or measured' },
+    T: { label: 'Needs testing', desc: 'Could sink the business if wrong — test it first' }
+  };
+
+  // Blocks in fill order (1–9). Grid placement comes from grid-area = id.
+  var BLOCKS = [
+    { id: 'cs', n: 1, title: 'Customer Segments', area: 'front', size: 'tall', q: [
+      'Which different groups of people does the business aim to reach and serve?',
+      'Do any groups need different channels, relationships, or revenue streams? If so, list them as separate segments.',
+      'Do any segments depend on each other (multi-sided platform)?'
+    ] },
+    { id: 'vp', n: 2, title: 'Value Propositions', area: 'meet', size: 'tall', q: [
+      'Which products/services create value for each segment?',
+      'Why do these customers turn to us over another option?',
+      'Is the value created worth the price charged?'
+    ] },
+    { id: 'ch', n: 3, title: 'Channels', area: 'front', size: '', q: [
+      'How do we reach and communicate with each segment to deliver the value proposition?',
+      'Direct (sales force, web, own stores), indirect (partners, wholesalers, distributors), or both?',
+      'What handles each phase: awareness, evaluation, purchase, delivery, after sales?'
+    ] },
+    { id: 'cr', n: 4, title: 'Customer Relationships', area: 'front', size: '', q: [
+      'How do we find, acquire, and build relationships with customers?',
+      'How do we acquire customers, and how do we retain them?',
+      'Which type fits each segment: personal assistance, automated services, communities and co-creation, long-term engagement, self-service?'
+    ] },
+    { id: 'rv', n: 5, title: 'Revenue Streams', area: 'front', size: 'wide', q: [
+      'What cash does each customer segment generate?',
+      'Which mechanism: asset sale, usage fee, subscription fee, renting, brokerage fee (commission)?',
+      'One-time or recurring fees? Which models are we mixing?'
+    ] },
+    { id: 'kr', n: 6, title: 'Key Resources', area: 'back', size: '', q: [
+      'What assets are required to make the business work?',
+      'Which are physical, intellectual, human, financial?',
+      'Which do we own, and which do partners supply?'
+    ] },
+    { id: 'ka', n: 7, title: 'Key Activities', area: 'back', size: '', q: [
+      'What are the most important things we must do to make the model work?',
+      'Is the core production, problem solving, or platform/network?',
+      'Which activities create the differentiation in our value proposition?'
+    ] },
+    { id: 'kp', n: 8, title: 'Key Partners', area: 'back', size: 'tall', q: [
+      'Who outside the business supplies a critical resource or performs a critical activity?',
+      'Suppliers, strategic alliances, or joint ventures?',
+      'What do we pay each partner, and what do they give us?'
+    ] },
+    { id: 'co', n: 9, title: 'Cost Structure', area: 'back', size: 'wide', q: [
+      'What are the most important costs inherent in our business?',
+      'Which key resources and which key activities are the most expensive?',
+      'Cost-driven or value-driven? Which costs are fixed and which variable?'
+    ] }
+  ];
+
+  var FACTORS = [
+    { id: 'switching', name: 'Switching Costs', low: 'Nothing keeps my customers from leaving me', high: 'My customers are locked in for several years' },
+    { id: 'recurring', name: 'Recurring Revenues', low: '100% of sales are transactional', high: '100% of sales lead to recurring revenues' },
+    { id: 'earning', name: 'Earning vs. Spending', low: 'I incur 100% of my COGS before earning revenue', high: 'I earn 100% of my revenue before incurring COGS' },
+    { id: 'cost', name: 'Game-Changing Cost Structure', low: 'My cost structure is 30% higher than my competitors', high: 'My cost structure is 30% lower than my competitors' },
+    { id: 'others', name: 'Others Who Do the Work', low: 'I incur costs for all value created in my business model', high: 'Value is created in the business for free by external parties' },
+    { id: 'scalability', name: 'Scalability', low: 'Growing the business model requires substantial resources and effort', high: 'My business model has virtually no limits to growth' },
+    { id: 'protection', name: 'Protection from Competition', low: 'I am vulnerable to competition', high: 'I am not vulnerable to competition' }
+  ];
+
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  // ---------- State ----------
+  function blankState() {
+    var s = { meta: { designedFor: '', designedBy: '', date: '', version: '1' }, blocks: {}, assessment: {}, showQuestions: true };
+    BLOCKS.forEach(function (b) { s.blocks[b.id] = []; });
+    FACTORS.forEach(function (f) { s.assessment[f.id] = { score: null, evidence: '' }; });
+    return s;
+  }
+
+  function normalize(raw) {
+    var s = blankState();
+    if (!raw || typeof raw !== 'object') return s;
+    if (raw.meta && typeof raw.meta === 'object') {
+      Object.keys(s.meta).forEach(function (k) { if (typeof raw.meta[k] === 'string') s.meta[k] = raw.meta[k]; });
+    }
+    if (raw.blocks && typeof raw.blocks === 'object') {
+      BLOCKS.forEach(function (b) {
+        var arr = raw.blocks[b.id];
+        if (Array.isArray(arr)) {
+          s.blocks[b.id] = arr
+            .filter(function (n) { return n && typeof n.text === 'string'; })
+            .map(function (n) { return { text: n.text, status: STATUS[n.status] ? n.status : 'A' }; });
+        }
+      });
+    }
+    if (raw.assessment && typeof raw.assessment === 'object') {
+      FACTORS.forEach(function (f) {
+        var a = raw.assessment[f.id];
+        if (a && typeof a === 'object') {
+          var n = Number(a.score);
+          var valid = a.score !== null && a.score !== undefined && a.score !== '' && isFinite(n) && n >= 0 && n <= 10;
+          s.assessment[f.id] = { score: valid ? Math.round(n) : null, evidence: typeof a.evidence === 'string' ? a.evidence : '' };
+        }
+      });
+    }
+    if (typeof raw.showQuestions === 'boolean') s.showQuestions = raw.showQuestions;
+    return s;
+  }
+
+  var storageOK = true;
+  function load() {
+    try {
+      var raw = window.localStorage.getItem(STORAGE_KEY);
+      return raw ? normalize(JSON.parse(raw)) : blankState();
+    } catch (e) {
+      storageOK = false;
+      return blankState();
+    }
+  }
+
+  var state = load();
+  var saveTimer = null;
+  var baseStatus = '';
+
+  function setStatus(msg) { baseStatus = msg; $('status').textContent = msg; }
+  var flashTimer = null;
+  function flash(msg) {
+    clearTimeout(flashTimer);
+    $('status').textContent = msg;
+    flashTimer = setTimeout(function () { $('status').textContent = baseStatus; }, 2600);
+  }
+
+  function save() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        storageOK = true;
+        setStatus('Saved in this browser');
+      } catch (e) {
+        storageOK = false;
+        setStatus('Autosave is unavailable here. Export JSON to keep your work.');
+      }
+    }, 250);
+  }
+
+  // ---------- Canvas ----------
+  function autosize(ta) {
+    ta.style.height = 'auto';
+    ta.style.height = ta.scrollHeight + 'px';
+  }
+
+  function focusNote(bid, i, atEnd) {
+    var tas = document.querySelectorAll('#list-' + bid + ' textarea');
+    var ta = tas[i];
+    if (!ta) return;
+    ta.focus();
+    if (atEnd) { var l = ta.value.length; ta.setSelectionRange(l, l); }
+  }
+
+  function blockTitle(bid) {
+    for (var i = 0; i < BLOCKS.length; i++) if (BLOCKS[i].id === bid) return BLOCKS[i].title;
+    return '';
+  }
+
+  function renderList(bid) {
+    var list = $('list-' + bid);
+    list.innerHTML = '';
+    var title = blockTitle(bid);
+    state.blocks[bid].forEach(function (note, i) {
+      var row = document.createElement('div');
+      row.className = 'note';
+
+      var tag = document.createElement('button');
+      tag.type = 'button';
+      tag.className = 'tag';
+      function paintTag() {
+        row.dataset.status = note.status;
+        tag.textContent = note.status;
+        tag.title = STATUS[note.status].label + ': ' + STATUS[note.status].desc + ' (click to change)';
+        tag.setAttribute('aria-label', 'Status: ' + STATUS[note.status].label + '. Click to change.');
+      }
+      paintTag();
+      tag.addEventListener('click', function () {
+        note.status = STATUS_ORDER[(STATUS_ORDER.indexOf(note.status) + 1) % STATUS_ORDER.length];
+        paintTag();
+        save();
+      });
+
+      var ta = document.createElement('textarea');
+      ta.rows = 1;
+      ta.value = note.text;
+      ta.placeholder = 'Write one entry';
+      ta.setAttribute('aria-label', title + ', entry ' + (i + 1));
+      ta.addEventListener('input', function () { note.text = ta.value; autosize(ta); save(); });
+      ta.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+          e.preventDefault();
+          state.blocks[bid].splice(i + 1, 0, { text: '', status: 'A' });
+          renderList(bid);
+          focusNote(bid, i + 1);
+          save();
+        } else if (e.key === 'Backspace' && ta.value === '') {
+          e.preventDefault();
+          state.blocks[bid].splice(i, 1);
+          renderList(bid);
+          if (i > 0) focusNote(bid, i - 1, true);
+          else if (state.blocks[bid].length) focusNote(bid, 0);
+          else list.parentNode.querySelector('.add').focus();
+          save();
+        }
+      });
+
+      var del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'del';
+      del.textContent = '×';
+      del.title = 'Delete entry';
+      del.setAttribute('aria-label', 'Delete ' + title + ' entry ' + (i + 1));
+      del.addEventListener('click', function () {
+        state.blocks[bid].splice(i, 1);
+        renderList(bid);
+        save();
+      });
+
+      row.appendChild(tag);
+      row.appendChild(ta);
+      row.appendChild(del);
+      list.appendChild(row);
+    });
+    Array.prototype.forEach.call(list.querySelectorAll('textarea'), autosize);
+  }
+
+  function buildCanvas() {
+    var canvas = $('canvas');
+    canvas.innerHTML = '';
+    BLOCKS.forEach(function (b) {
+      var sec = document.createElement('section');
+      sec.className = 'block' + (b.size ? ' ' + b.size : '');
+      sec.dataset.area = b.area;
+      sec.style.gridArea = b.id;
+      sec.setAttribute('aria-labelledby', 'h-' + b.id);
+      sec.innerHTML =
+        '<div class="bh"><span class="num" aria-hidden="true">' + b.n + '</span><h2 id="h-' + b.id + '">' + esc(b.title) + '</h2></div>' +
+        '<ul class="q">' + b.q.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+        '<div class="list" id="list-' + b.id + '"></div>' +
+        '<button type="button" class="add">+ Add entry</button>';
+      sec.querySelector('.add').addEventListener('click', function () {
+        state.blocks[b.id].push({ text: '', status: 'A' });
+        renderList(b.id);
+        focusNote(b.id, state.blocks[b.id].length - 1);
+        save();
+      });
+      canvas.appendChild(sec);
+      renderList(b.id);
+    });
+  }
+
+  function buildStatusLegend() {
+    $('statusLegend').innerHTML = STATUS_ORDER.map(function (k) {
+      return '<span class="item" data-status="' + k + '">' +
+        '<span class="tag" aria-hidden="true">' + k + '</span>' +
+        '<span><b>' + esc(STATUS[k].label) + '</b> · ' + esc(STATUS[k].desc) + '</span></span>';
+    }).join('') + '<span class="item"><span><b>Filling in a box does not prove it is true.</b></span></span>';
+  }
+
+  // ---------- Assessment ----------
+  function updateTotal() {
+    var t = 0, n = 0;
+    FACTORS.forEach(function (f) {
+      var s = state.assessment[f.id].score;
+      if (s !== null) { t += s; n++; }
+    });
+    $('total').textContent = 'Total: ' + t + ' / 70 · ' + n + ' of 7 scored';
+  }
+
+  function buildAssessment() {
+    var wrap = $('factors');
+    wrap.innerHTML = '';
+    FACTORS.forEach(function (f) {
+      var row = document.createElement('div');
+      row.className = 'factor';
+      row.innerHTML =
+        '<div class="fhead"><label class="fname" for="r-' + f.id + '">' + esc(f.name) + '</label>' +
+        '<output id="o-' + f.id + '" for="r-' + f.id + '"></output>' +
+        '<button type="button" class="unscore" aria-label="Clear ' + esc(f.name) + ' score">clear</button></div>' +
+        '<input type="range" id="r-' + f.id + '" min="0" max="10" step="1">' +
+        '<div class="anchors"><span><b>0</b> ' + esc(f.low) + '</span><span><b>10</b> ' + esc(f.high) + '</span></div>' +
+        '<input type="text" class="evidence" placeholder="Evidence (canvas entry or data)" aria-label="' + esc(f.name) + ' evidence">';
+      var r = row.querySelector('input[type="range"]');
+      var o = row.querySelector('output');
+      var ev = row.querySelector('.evidence');
+      var un = row.querySelector('.unscore');
+
+      function sync() {
+        var sc = state.assessment[f.id].score;
+        row.classList.toggle('unscored', sc === null);
+        r.value = sc === null ? 5 : sc;
+        o.textContent = sc === null ? '–' : String(sc);
+        r.setAttribute('aria-valuetext', sc === null ? 'Not scored' : sc + ' of 10');
+        updateTotal();
+      }
+      function setFromRange() { state.assessment[f.id].score = Number(r.value); sync(); save(); }
+      r.addEventListener('input', setFromRange);
+      r.addEventListener('change', setFromRange);
+      r.addEventListener('click', function () { if (state.assessment[f.id].score === null) setFromRange(); });
+      un.addEventListener('click', function () { state.assessment[f.id].score = null; sync(); save(); r.focus(); });
+      ev.value = state.assessment[f.id].evidence;
+      ev.addEventListener('input', function () { state.assessment[f.id].evidence = ev.value; save(); });
+
+      wrap.appendChild(row);
+      sync();
+    });
+  }
+
+  // ---------- Meta + questions toggle ----------
+  function bindMeta() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-meta]'), function (inp) {
+      inp.value = state.meta[inp.dataset.meta] || '';
+      if (!inp.dataset.bound) {
+        inp.addEventListener('input', function () { state.meta[inp.dataset.meta] = inp.value; save(); });
+        inp.dataset.bound = '1';
+      }
+    });
+  }
+
+  function applyQuestions() {
+    document.body.classList.toggle('hide-q', !state.showQuestions);
+    $('toggleQ').setAttribute('aria-pressed', String(state.showQuestions));
+  }
+
+  function renderAll() {
+    bindMeta();
+    buildCanvas();
+    buildAssessment();
+    applyQuestions();
+  }
+
+  // ---------- Export / import ----------
+  function mdCell(s) { return String(s || '').replace(/\|/g, '\\|').replace(/\r?\n/g, ' '); }
+
+  function toMarkdown() {
+    var m = state.meta;
+    var blank = '________';
+    var L = [];
+    L.push('# Business Model Canvas', '');
+    L.push('**Designed for:** ' + (m.designedFor || blank));
+    L.push('**Designed by:** ' + (m.designedBy || blank));
+    L.push('**Date:** ' + (m.date || blank));
+    L.push('**Version:** ' + (m.version || blank), '');
+    L.push('Status tags: [A] Assumed · [E] Supported by evidence · [T] Needs testing', '');
+    BLOCKS.forEach(function (b) {
+      L.push('## ' + b.n + '. ' + b.title);
+      if (state.showQuestions) b.q.forEach(function (q) { L.push('> ' + q); });
+      var notes = state.blocks[b.id].filter(function (n) { return n.text.trim(); });
+      if (!notes.length) L.push('- [A]');
+      notes.forEach(function (n) { L.push('- [' + n.status + '] ' + n.text.trim().replace(/\r?\n/g, '\n  ')); });
+      L.push('');
+    });
+    L.push('## Business Model Assessment');
+    L.push('| Factor | Score (0–10) | Evidence |');
+    L.push('|---|---|---|');
+    var t = 0, c = 0;
+    FACTORS.forEach(function (f) {
+      var a = state.assessment[f.id];
+      if (a.score !== null) { t += a.score; c++; }
+      L.push('| ' + f.name + ' | ' + (a.score === null ? '' : a.score) + ' | ' + mdCell(a.evidence) + ' |');
+    });
+    L.push('**Total:** ' + (c ? t : '__') + ' / 70' + (c && c < 7 ? ' (' + c + ' of 7 scored)' : ''));
+    return L.join('\n') + '\n';
+  }
+
+  function toJson() {
+    var out = { format: 'business-model-canvas', formatVersion: 1, exportedAt: new Date().toISOString() };
+    out.meta = state.meta;
+    out.blocks = state.blocks;
+    out.assessment = state.assessment;
+    out.showQuestions = state.showQuestions;
+    return JSON.stringify(out, null, 2) + '\n';
+  }
+
+  function fileBase() {
+    var slug = (state.meta.designedFor || 'untitled').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'untitled';
+    var v = (state.meta.version || '').replace(/[^A-Za-z0-9.]+/g, '');
+    return 'business-model-canvas-' + slug + (v ? '-v' + v : '');
+  }
+
+  function showFallback(text, msg) {
+    $('fallbackMsg').textContent = msg || 'Your browser blocked the download or clipboard. Select all the text below and copy it.';
+    $('fallbackText').value = text;
+    $('fallback').hidden = false;
+    $('fallbackText').focus();
+    $('fallbackText').select();
+  }
+
+  function download(name, text, type) {
+    try {
+      var blob = new Blob([text], { type: type });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      flash('Downloaded ' + name);
+    } catch (e) {
+      showFallback(text);
+    }
+  }
+
+  function copyMarkdown() {
+    var md = toMarkdown();
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(md).then(
+          function () { flash('Markdown copied'); },
+          function () { showFallback(md); }
+        );
+      } else {
+        showFallback(md);
+      }
+    } catch (e) {
+      showFallback(md);
+    }
+  }
+
+  function importFile(file) {
+    var rd = new FileReader();
+    rd.onload = function () {
+      try {
+        var obj = JSON.parse(rd.result);
+        if (!obj || typeof obj !== 'object' || !obj.blocks) throw new Error('Not a canvas export');
+        state = normalize(obj);
+        renderAll();
+        save();
+        flash('Imported ' + file.name);
+      } catch (e) {
+        flash('That file is not a Business Model Canvas JSON export.');
+      }
+      $('fileInput').value = '';
+    };
+    rd.onerror = function () { flash('Could not read that file.'); };
+    rd.readAsText(file);
+  }
+
+  // ---------- Wire up toolbar ----------
+  $('toggleQ').addEventListener('click', function () {
+    state.showQuestions = !state.showQuestions;
+    applyQuestions();
+    save();
+  });
+  $('exportMd').addEventListener('click', function () { download(fileBase() + '.md', toMarkdown(), 'text/markdown;charset=utf-8'); });
+  $('copyMd').addEventListener('click', copyMarkdown);
+  $('exportJson').addEventListener('click', function () { download(fileBase() + '.json', toJson(), 'application/json;charset=utf-8'); });
+  $('importJson').addEventListener('click', function () { $('fileInput').click(); });
+  $('fileInput').addEventListener('change', function () { if (this.files && this.files[0]) importFile(this.files[0]); });
+  $('printBtn').addEventListener('click', function () { window.print(); });
+  $('fallbackClose').addEventListener('click', function () { $('fallback').hidden = true; });
+
+  var clearBtn = $('clearBtn');
+  var armTimer = null;
+  function disarm() {
+    clearTimeout(armTimer);
+    clearBtn.classList.remove('armed');
+    clearBtn.textContent = 'Clear';
+  }
+  clearBtn.addEventListener('click', function () {
+    if (!clearBtn.classList.contains('armed')) {
+      clearBtn.classList.add('armed');
+      clearBtn.textContent = 'Click again to clear everything';
+      armTimer = setTimeout(disarm, 4000);
+      return;
+    }
+    disarm();
+    state = blankState();
+    renderAll();
+    save();
+    flash('Canvas cleared');
+  });
+  clearBtn.addEventListener('blur', disarm);
+
+  window.addEventListener('beforeprint', function () {
+    Array.prototype.forEach.call(document.querySelectorAll('.note textarea'), autosize);
+  });
+  var resizeTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.note textarea'), autosize);
+    }, 150);
+  });
+
+  // ---------- Init ----------
+  buildStatusLegend();
+  renderAll();
+  setStatus(storageOK ? 'Autosave on: changes are saved in this browser' : 'Autosave is unavailable here. Export JSON to keep your work.');
+})();
+</script>
+</body>
+</html>
