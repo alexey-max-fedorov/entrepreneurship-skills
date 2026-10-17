@@ -2,7 +2,7 @@
 name: creative-ideation
 description: "Generates and organizes solution ideas through brainstorming, reverse thinking, mind mapping, collaboration, and the SCAMPER method, anchored to a defined problem statement. Use when the user says 'I dont even know where to begin', 'brainstorm ideas', 'help me ideate', 'run SCAMPER', 'reverse brainstorm', 'mind map this', 'where do business ideas come from', or needs fresh ideas to solve a business problem (traffic, retention, training time, costs). Not a substitute for a problem statement; see problem-statement first, opportunity-id to screen ideas, customer-validation to test them."
 metadata:
-  version: 1.0.0
+  version: 0.4.0
 ---
 
 # Creative Ideation

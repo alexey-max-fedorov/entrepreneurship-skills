@@ -2,7 +2,7 @@
 name: value-proposition
 description: "Builds, audits, and sharpens a value proposition: the statement of what benefit you provide, for whom, and how you do it uniquely well. Covers the Target Customer + Problem/Job + Meaningful Benefit + Differentiator formula, logical vs. emotional buying, customer jobs/pains/gains, functional/economic/emotional-social benefits, differentiation vs. price, features vs. benefits, and common VP mistakes. Use when the user says 'value proposition', 'value prop', 'VP', 'why us', 'why would anyone buy this', 'what makes us different', 'differentiator', 'positioning statement', 'tagline', 'unique selling point', or 'rewrite my pitch'. For the problem itself see problem-statement; for who the customer is see customer-segmentation; for competitors see market-research; for the full model see business-model."
 metadata:
-  version: 1.0.0
+  version: 0.4.0
 ---
 
 # Value Proposition

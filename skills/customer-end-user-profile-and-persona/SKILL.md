@@ -2,7 +2,7 @@
 name: customer-end-user-profile-and-persona
 description: "Builds a research-based End User Profile (the fictional, specific user inside a defined segment) and turns it into a Persona (one real, interviewable person who embodies that profile), complete with profile questions, persona selection criteria, and a persona fact sheet. Use when the user says 'end user profile', 'who is my end user', 'customer profile', 'user persona', 'build a persona', 'persona fact sheet', 'describe my target user', 'who will actually use this', or wants to audit or revise an existing profile or persona. For who the customer is and choosing a segment or beachhead see customer-segmentation; for running the interviews see customer-interview; for buyer vs. user and other roles see customer-ecosystem."
 metadata:
-  version: 1.0.0
+  version: 0.4.0
 ---
 
 # Customer End User Profile & Persona

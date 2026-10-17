@@ -2,7 +2,7 @@
 name: opportunity-id
 description: "Finds, digs into, and screens business opportunities, meaning problems worth solving for profit. Covers idea vs. opportunity, where opportunities come from (signals, change, regulation, crises), the Five Cs of opportunity identification, and the 7 Criteria screening framework with red flags. Use when the user says 'is this a good business idea', 'find a business opportunity', 'is this problem worth solving', 'screen my idea', 'evaluate this opportunity', 'idea vs opportunity', 'where do I find startup ideas', 'should I pursue this', or wants to start, audit, pivot, or kill a venture. Always load together with problem-statement (prerequisite). For writing the problem statement see problem-statement; for sizing and competitors see market-research; for revenue models see business-model; for differentiation see value-proposition."
 metadata:
-  version: 1.0.0
+  version: 0.4.0
 ---
 
 # Opportunity Identification & Screening

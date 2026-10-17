@@ -2,7 +2,7 @@
 name: customer-validation
 description: "Tests a venture's assumptions about the problem, the customer/market, and the solution with real customers before more time or money is spent. Use when the user says 'validate my idea', 'customer validation', 'market validation', 'solution validation', 'is there demand', 'will people pay for this', 'test my assumptions', 'how many interviews do I need', 'where do I find people to interview', or 'did my validation prove anything'. For defining the problem see problem-statement; for who the customer is see customer-segmentation; for running the conversations see customer-interview; for market sizing and competitors see market-research."
 metadata:
-  version: 1.0.0
+  version: 0.4.0
 ---
 
 # Customer Validation
