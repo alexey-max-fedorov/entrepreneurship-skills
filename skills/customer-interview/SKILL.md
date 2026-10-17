@@ -2,7 +2,7 @@
 name: customer-interview
 description: "Plans, scripts, conducts, and synthesizes customer interviews using ten interview rules, an annotated interview guide, an after-interview evidence record, and a Proceed / Pivot / Punt decision. Use when the user says 'customer interview', 'interview script', 'interview guide', 'what should I ask customers', 'teach me to interview customers', 'run a customer interview with me', 'review my interview questions', 'what did my interviews tell me', or 'should I pivot based on interviews'. For defining the problem see problem-statement; for who to interview see customer-segmentation; for the broader validation process see customer-validation."
 metadata:
-  version: 0.4.0
+  version: 1.0.0
 ---
 
 # Customer Interview

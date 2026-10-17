@@ -2,7 +2,7 @@
 name: market-research
 description: "Plans, runs, and judges market research: primary vs. secondary sources, qualitative vs. quantitative data, method selection, the five market claims (demand, size, accessibility, competition, economics), competitive analysis, evidence triangulation, and the Proceed / Pivot / Punt scorecard. Use when the user says 'market research', 'market validation', 'is there a market for this', 'how big is the market', 'market sizing', 'who are my competitors', 'competitive analysis', 'secondary research', 'primary research', 'survey or interviews', 'find industry data', 'should I proceed or pivot', or wants to audit or revisit the market for an existing business. For the problem itself see problem-statement; for who the customer is see customer-segmentation; for running interviews see customer-interview; for commitment and solution evidence see customer-validation."
 metadata:
-  version: 0.4.0
+  version: 1.0.0
 ---
 
 # Market Research

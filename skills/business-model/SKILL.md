@@ -2,7 +2,7 @@
 name: business-model
 description: "Designs, documents, assesses, and stress-tests business models: how a business creates, delivers, and captures value. Covers the business model definition, a text template, 15 mix-and-match model types, the 9-block Business Model Canvas (Markdown and interactive HTML), a 7-factor assessment, calculated vs. reckless risk, the old vs. new playbook, growth mindset, and openness to pivoting. Use when the user says 'business model', 'business model canvas', 'BMC', 'how will this make money', 'revenue model', 'monetization', 'marketplace model', 'freemium', 'is this scalable', 'audit my business model', 'pivot the model', 'should we pivot', 'our test failed', 'growth mindset', 'cost structure', 'revenue streams', 'is this risk smart or reckless'. For the problem and the proceed/pivot/punt decision see problem-statement; for the offer see value-proposition; for who the customer is see customer-segmentation; for testing assumptions see customer-validation."
 metadata:
-  version: 0.4.0
+  version: 1.0.0
 ---
 
 # Business Model

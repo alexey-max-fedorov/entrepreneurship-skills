@@ -40,7 +40,7 @@ codex plugin marketplace add alexey-max-fedorov/entrepreneurship-skills
 ### Any agent that supports the skills CLI
 
 ```bash
-npx skills add alexey-max-fedorov/entrepreneurship-skills
+pnpx skills add alexey-max-fedorov/entrepreneurship-skills
 ```
 
 ### Manual

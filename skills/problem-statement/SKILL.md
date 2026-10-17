@@ -2,7 +2,7 @@
 name: problem-statement
 description: "The library entry point and starting point for any venture. Finds, diagnoses, writes, tests, and validates the problem a business solves: problem vs. solution, pain types, problem evidence, symptoms vs. root causes, Jobs-to-Be-Done, problem laddering, workarounds, four problem statement frameworks (Simple, Jobs-to-Be-Done, Empathy Based, Quantified), the Problem Statement Test, and problem validation with Proceed/Pivot/Punt. Use when the user says 'I have a startup idea', 'where do I start', 'what problem am I solving', 'write my problem statement', 'is this a real problem', 'root cause', 'why is my business struggling', 'should we pivot', or wants to start, audit, revise, or pivot any venture. Always load with opportunity-id. Related: customer-segmentation, customer-interview, customer-validation, market-research, value-proposition."
 metadata:
-  version: 0.4.0
+  version: 1.0.0
 ---
 
 # Problem Statement

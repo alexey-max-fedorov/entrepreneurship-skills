@@ -2,7 +2,7 @@
 name: customer-segmentation
 description: "Customer entry point. Answers who is my customer: segment a broad market into groups that share a need, behavior, or buying context, write testable segment hypotheses, and pick a beachhead market to win first and expand from. Use when the user says 'who is my customer', 'who should I target', 'segment my market', 'customer segments', 'target market', 'beachhead market', 'which customers first', 'our market is everyone', 'niche down', or is starting, auditing, or pivoting who a business serves. For stakeholder roles, see customer-ecosystem; for talking to customers, customer-interview; for testing whether they will buy, customer-validation; for the exact user, customer-end-user-profile-and-persona; for market size, market-research. Starts from problem-statement and opportunity-id."
 metadata:
-  version: 0.4.0
+  version: 1.0.0
 ---
 
 # Customer Segmentation
