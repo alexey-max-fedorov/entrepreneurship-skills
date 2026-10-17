@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "entrepreneurship-skills",
-      "description": "2 entrepreneurship skills (alpha, beta) for AI agents",
+      "description": "11 entrepreneurship skills (alpha, beta) for AI agents",
       "source": "./"
     }
   ]

@@ -9,8 +9,17 @@ Built on the open [Agent Skills specification](https://agentskills.io/specificat
 <!-- SKILLS:START -->
 | Skill | Description |
 |-------|-------------|
-| [alpha](skills/alpha/) | When the user wants to [TODO: primary job of this skill]. Also use when the user mentions 'alpha trigger one,' 'alpha... |
-| [beta](skills/beta/) | When the user wants to [TODO: primary job of this skill]. Also use when the user mentions 'beta trigger one,' 'beta... |
+| [business-model](skills/business-model/) | Designs, documents, assesses, and stress-tests business models: how a business creates, delivers, and captures value.... |
+| [creative-ideation](skills/creative-ideation/) | Generates and organizes solution ideas through brainstorming, reverse thinking, mind mapping, collaboration, and the... |
+| [customer-ecosystem](skills/customer-ecosystem/) | Maps the customer ecosystem, the network of stakeholders (end user, decision maker, economic buyer, influencer,... |
+| [customer-end-user-profile-and-persona](skills/customer-end-user-profile-and-persona/) | Builds a research-based End User Profile (the fictional, specific user inside a defined segment) and turns it into a... |
+| [customer-interview](skills/customer-interview/) | Plans, scripts, conducts, and synthesizes customer interviews using ten interview rules, an annotated interview guide,... |
+| [customer-segmentation](skills/customer-segmentation/) | Customer entry point. Answers who is my customer: segment a broad market into groups that share a need, behavior, or... |
+| [customer-validation](skills/customer-validation/) | Tests a venture's assumptions about the problem, the customer/market, and the solution with real customers before more... |
+| [market-research](skills/market-research/) | Plans, runs, and judges market research: primary vs. secondary sources, qualitative vs. quantitative data, method... |
+| [opportunity-id](skills/opportunity-id/) | Finds, digs into, and screens business opportunities, meaning problems worth solving for profit. Covers idea vs.... |
+| [problem-statement](skills/problem-statement/) | The library entry point and starting point for any venture. Finds, diagnoses, writes, tests, and validates the problem... |
+| [value-proposition](skills/value-proposition/) | Builds, audits, and sharpens a value proposition: the statement of what benefit you provide, for whom, and how you do... |
 <!-- SKILLS:END -->
 
 ## Installation
