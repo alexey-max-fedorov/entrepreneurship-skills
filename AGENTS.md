@@ -42,10 +42,10 @@ entrepreneurship-skills/
 
 **Repo scripts and tests:**
 ```bash
-node scripts/check-versions.mjs          # Version consistency
+bun scripts/check-versions.mjs           # Version consistency
 ./validate-skills.sh                     # Frontmatter validation
 bash tests/run-regression.sh             # Validator regression tests
-node --test tests/scripts/*.test.cjs     # Sync and version script tests
+bun test tests/scripts/                  # Sync and version script tests
 python3 -m unittest discover -s tests -p test_skill_packaging.py -v
 ```
 
@@ -59,7 +59,7 @@ Two version layers, with different rules:
 - **y** — new skill(s) added
 - **z** — updates to existing skills
 
-Do not bump y for content added to an existing skill, no matter how substantial — that's a z release (e.g. a new reference file in alpha is 0.2.0 → 0.2.1, not 0.3.0).
+Do not bump y for content added to an existing skill, no matter how substantial — that's a z release (e.g. a new reference file in problem-statement is 0.2.0 → 0.2.1, not 0.3.0).
 
 **Per-skill version** — `metadata.version` in each SKILL.md, mirrored in the `VERSIONS.md` table. Bump on ANY shipped change to that skill: the update check compares `VERSIONS.md` against users' local skill metadata, so an unbumped change is invisible to installed users. Minor for new capability or description triggers, patch for fixes and clarifications.
 
@@ -68,7 +68,7 @@ Bump the repo release version in the same PR that ships the change (skipping thi
 CI enforces both layers on PRs. Fetch first so `origin/master` is current, then run it locally before pushing:
 
 ```bash
-node scripts/check-versions.mjs --base origin/master
+bun scripts/check-versions.mjs --base origin/master
 ```
 
 It fails if a changed skill didn't bump `metadata.version`, if `VERSIONS.md` disagrees with any SKILL.md, if the repo version didn't bump (or has no `### x.y.z` block), or if a file in `references/` isn't linked from anywhere in its skill. Changes only under a skill's `evals/` don't need a bump, since they don't change what installed users get.
@@ -102,7 +102,7 @@ description: What this skill does and when to use it. Include trigger phrases.
 - No consecutive hyphens (`--`)
 - Must match parent directory name exactly
 
-**Valid**: `alpha`, `beta`, `my-skill`
+**Valid**: `problem-statement`, `value-proposition`, `my-skill`
 **Invalid**: `Alpha-Skill`, `-skill`, `my--skill`
 
 ### Optional Skill Directories
@@ -152,7 +152,7 @@ The `description` is critical for skill discovery. Include:
 3. Related skills for scope boundaries
 
 ```yaml
-description: When the user wants to do X. Use when the user says "trigger one," "trigger two." For adjacent job Y, see beta.
+description: When the user wants to do X. Use when the user says "trigger one," "trigger two." For adjacent job Y, see value-proposition.
 ```
 
 ## Claude Code Plugin
@@ -179,7 +179,7 @@ See [Claude Code plugins documentation](https://code.claude.com/docs/en/plugins.
 Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
 - `feat: add skill-name skill`
-- `fix: improve clarity in alpha`
+- `fix: improve clarity in problem-statement`
 - `docs: update README`
 
 ### Pull Request Checklist

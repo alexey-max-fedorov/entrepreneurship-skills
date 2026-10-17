@@ -4,14 +4,14 @@
     "name": "Alexey Fedorov"
   },
   "metadata": {
-    "description": "Entrepreneurship skills for AI agents",
-    "version": "0.1.0",
+    "description": "Entrepreneurship skills for AI agents: from problem statements and customer interviews to value propositions and business models",
+    "version": "0.2.0",
     "repository": "https://github.com/alexey-max-fedorov/entrepreneurship-skills"
   },
   "plugins": [
     {
       "name": "entrepreneurship-skills",
-      "description": "11 entrepreneurship skills (alpha, beta) for AI agents",
+      "description": "11 entrepreneurship skills for AI agents: problem statements, customer discovery and validation, market research, value propositions, and business models",
       "source": "./"
     }
   ]

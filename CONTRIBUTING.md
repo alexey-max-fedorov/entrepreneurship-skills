@@ -8,7 +8,7 @@ You can also suggest new skills by [opening a skill request](https://github.com/
 
 ## Adding a New Skill
 
-The fastest start is to copy `skills/alpha/`, which shows the expected structure.
+The fastest start is to copy an existing skill such as `skills/problem-statement/`, which shows the expected structure.
 
 ### 1. Create the skill directory
 
@@ -35,7 +35,7 @@ Optional frontmatter fields: `license` (default: MIT), `metadata` (author, versi
 
 ### 3. Follow the naming conventions
 
-- **Directory name**: lowercase, hyphens only (e.g., `alpha`)
+- **Directory name**: lowercase, hyphens only (e.g., `problem-statement`)
 - **Name field**: must match directory name exactly
 - **Description**: 1-1024 characters, include trigger phrases
 
@@ -66,7 +66,7 @@ skills/your-skill-name/
 2. Test your changes locally
 3. Keep changes focused and minimal
 4. Bump `metadata.version` in the SKILL.md and the `VERSIONS.md` row, and bump the repo version (see `AGENTS.md`)
-5. Run `node scripts/check-versions.mjs`
+5. Run `bun scripts/check-versions.mjs`
 
 ## Licensing
 

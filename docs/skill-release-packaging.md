@@ -25,8 +25,8 @@ The current web guide documents a 200-character description limit, while the [Ag
 Python 3 and Git are the only build requirements. Builds read tracked resources from a frozen commit, never dirty or untracked working files:
 
 ```bash
-python3 scripts/package_skills.py --target source --skill alpha --output /tmp/entrepreneurship-skill-zips
-python3 scripts/package_skills.py --target claude-web --skill alpha --output /tmp/entrepreneurship-skill-zips
+python3 scripts/package_skills.py --target source --skill problem-statement --output /tmp/entrepreneurship-skill-zips
+python3 scripts/package_skills.py --target claude-web --skill problem-statement --output /tmp/entrepreneurship-skill-zips
 python3 scripts/package_skills.py --target source --ref v0.1.0 --output /tmp/entrepreneurship-release-zips
 python3 -m unittest discover -s tests -p test_skill_packaging.py -v
 ```

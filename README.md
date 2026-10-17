@@ -64,10 +64,10 @@ VERSIONS.md        # Per-skill version table and release changelog
 
 ## Adding a skill
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). In short: copy `skills/alpha/` to `skills/<your-skill>/`, fill in the `[TODO]` sections, add a row to `VERSIONS.md`, then run:
+See [CONTRIBUTING.md](CONTRIBUTING.md). In short: copy an existing skill such as `skills/problem-statement/` to `skills/<your-skill>/`, rewrite it, add a row to `VERSIONS.md`, then run:
 
 ```bash
-node scripts/check-versions.mjs
+bun scripts/check-versions.mjs
 ./validate-skills.sh
 ```
 
