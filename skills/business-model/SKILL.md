@@ -1,8 +1,8 @@
 ---
 name: business-model
-description: "Designs, documents, assesses, and stress-tests business models: how a business creates, delivers, and captures value. Covers the business model definition, a text template, 15 mix-and-match model types, the 9-block Business Model Canvas (Markdown and interactive HTML), a 7-factor assessment, calculated vs. reckless risk, the old vs. new playbook, growth mindset, and openness to pivoting. Use when the user says 'business model', 'business model canvas', 'BMC', 'how will this make money', 'revenue model', 'monetization', 'marketplace model', 'freemium', 'is this scalable', 'audit my business model', 'pivot the model', 'should we pivot', 'our test failed', 'growth mindset', 'cost structure', 'revenue streams', 'is this risk smart or reckless'. For the problem and the proceed/pivot/punt decision see problem-statement; for the offer see value-proposition; for who the customer is see customer-segmentation; for testing assumptions see customer-validation."
+description: "Designs, documents, assesses, and stress-tests business models: how a business creates, delivers, and captures value. Covers the business model definition, a text template, 15 mix-and-match model types, the 9-block Business Model Canvas (Markdown and interactive HTML), a 7-factor assessment, calculated vs. reckless risk, the old vs. new playbook, growth mindset, and openness to pivoting. Use when the user says 'business model', 'business model canvas', 'BMC', 'how will this make money', 'revenue model', 'monetization', 'marketplace model', 'freemium', 'is this scalable', 'audit my business model', 'pivot the model', 'should we pivot', 'our test failed', 'growth mindset', 'cost structure', 'revenue streams', 'is this risk smart or reckless'. Related: problem-statement (problem, proceed/pivot/punt), value-proposition (offer), customer-segmentation (customer), customer-validation (testing), pricing-models (setting the price), financials (P&L, cash flow, break-even)."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Business Model
@@ -24,6 +24,8 @@ Before doing anything else, read the SKILL.md of every skill below that is not a
 | [opportunity-id](../opportunity-id/SKILL.md) | **Opportunity recognition** and **opportunity evaluation**, which come before model design; the new playbook's technology-enabled niche |
 | [customer-ecosystem](../customer-ecosystem/SKILL.md) | **Customer ecosystem** and **stakeholder roles** in multi-sided and partner-heavy models (hosts and guests, dealers, influencers) |
 | [creative-ideation](../creative-ideation/SKILL.md) | **Brainstorming** several candidate business models before choosing one |
+| [pricing-models](../pricing-models/SKILL.md) | **Pricing models** and **price**: how much each Revenue Stream charges and the Big Question (is the value created worth the price charged?); **freemium** as a pricing model vs. a revenue model |
+| [financials](../financials/SKILL.md) | **Fixed vs. variable costs**, **COGS**, **gross margin**, **break-even**, and **cash flow**: the numbers behind the Cost Structure block, the Earning vs. Spending score, and unit economics |
 
 ## Before You Start
 
@@ -123,7 +125,7 @@ Use this one-paragraph template to state any business model fast, before or alon
 Big Question: Is the value created worth the price charged? (revenue/profit formula)
 ```
 
-**The Big Question** is the test of every business model: **is the value created worth the price charged?** If customers will not pay a price that covers the cost of creating and delivering that value, the model fails no matter how good the product is.
+**The Big Question** is the test of every business model: **is the value created worth the price charged?** If customers will not pay a price that covers the cost of creating and delivering that value, the model fails no matter how good the product is. Setting that price is done with one or more pricing models (→ [pricing-models](../pricing-models/SKILL.md)); checking that it covers costs is the income statement and break-even (→ [financials](../financials/SKILL.md)).
 
 **Filled example (Nike, from the slides):**
 
@@ -188,6 +190,8 @@ When you design or audit a model, list **every** way the business makes money an
 | **Advertising** | Provide free products or services to users; generate revenue by displaying advertisements | Visithoustontexas.com |
 | **Direct Sales** | Sell to customers online without retail partners | Dell |
 | **Razor and Blade** | No/low profit on the main component; profit via ongoing purchases | Gillette, Keurig, inkjet printers |
+
+Freemium is also a **pricing model** (where the free line sits, what the paid tier costs, what triggers the upgrade); that side is covered in → [pricing-models](../pricing-models/SKILL.md).
 
 ### Platform and Marketplace Models — Connecting Buyers, Sellers, and Users
 
@@ -384,6 +388,8 @@ Choose the relationship type the segment's economics can afford: personal assist
 
 These mechanisms are how the [business model types](#list-of-business-models) actually charge. Note for each stream: one-time or recurring, and when the cash arrives relative to when you spend (this drives the assessment).
 
+How much each stream charges, and how that price moves over time, is set with one or more **pricing models** (cost-plus, value-based, competitive, penetration, skimming, prestige, dynamic, freemium, bundle) (→ [pricing-models](../pricing-models/SKILL.md)).
+
 Example revenue mix: Nike's FY2024 revenue share by product category was footwear 68%, apparel 28%, equipment 4% (Statista 2024). Spirit Airlines earns from **tickets and fees**.
 
 ### 6. Key Resources
@@ -468,6 +474,8 @@ Spirit Airlines' key partners: **car rental, hotel, insurance**.
 Nike's profit on a $100 shoe is $5. The biggest single slice goes to the channel, not to production, which is why channel design belongs in the same conversation as cost structure.
 
 Spirit Airlines' costs: **maintenance, training, airports, call centers**, which is a cost-driven structure aligned with its "cheap flights, no frills" value proposition.
+
+To turn the Cost Structure into numbers (fixed costs per month, variable cost per unit, COGS, gross margin, break-even volume, and the cash needed before revenue arrives), build the financial statements (→ [financials](../financials/SKILL.md)).
 
 ---
 
@@ -619,6 +627,7 @@ Score the model on seven factors, each from **0 to 10**. The left anchor is 0, t
 - **Compare candidates side by side** (see [Choosing Among Candidate Models](#choosing-among-candidate-models)). The same opportunity scores very differently as a matchmaker, a consultancy, a service company, or a shared-savings model.
 - **Re-score after every revision** and keep the versions; the trend matters more than the absolute number.
 - **Cost structure and protection scores need competitor data.** You cannot claim "30% lower than competitors" or "not vulnerable" without a competitive analysis (→ [market-research](../market-research/SKILL.md)).
+- **Earning vs. Spending is a cash-timing score.** Paying COGS before customers pay you drains cash even when the P&L shows a profit; check it with a cash flow statement (→ [financials](../financials/SKILL.md)).
 
 ### Levers That Move Each Score
 
@@ -1003,3 +1012,5 @@ The founder's plan: "Students will love it. Move fast, grab the whole town befor
 - **[customer-validation](../customer-validation/SKILL.md)** — to test the Needs-testing entries that could sink the business.
 - **[market-research](../market-research/SKILL.md)** — for the competitor and market data behind the cost-structure and protection scores.
 - **[creative-ideation](../creative-ideation/SKILL.md)** — to generate more candidate business models before choosing one.
+- **[pricing-models](../pricing-models/SKILL.md)** — to set the price behind each revenue stream, choose and combine pricing models, and test the price.
+- **[financials](../financials/SKILL.md)** — to put numbers on Revenue Streams and Cost Structure: P&L, break-even, and cash flow.

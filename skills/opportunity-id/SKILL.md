@@ -2,7 +2,7 @@
 name: opportunity-id
 description: "Finds, digs into, and screens business opportunities, meaning problems worth solving for profit. Covers idea vs. opportunity, where opportunities come from (signals, change, regulation, crises), the Five Cs of opportunity identification, and the 7 Criteria screening framework with red flags. Use when the user says 'is this a good business idea', 'find a business opportunity', 'is this problem worth solving', 'screen my idea', 'evaluate this opportunity', 'idea vs opportunity', 'where do I find startup ideas', 'should I pursue this', or wants to start, audit, pivot, or kill a venture. Always load together with problem-statement (prerequisite). For writing the problem statement see problem-statement; for sizing and competitors see market-research; for revenue models see business-model; for differentiation see value-proposition."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Opportunity Identification & Screening
@@ -25,6 +25,8 @@ Before doing anything else, read the SKILL.md of every skill below that is not a
 | [customer-ecosystem](../customer-ecosystem/SKILL.md) | Stakeholder roles. The person who suffers the problem is not always the person who pays. |
 | [customer-end-user-profile-and-persona](../customer-end-user-profile-and-persona/SKILL.md) | End user profile and persona, for making the "clear user" concrete |
 | [creative-ideation](../creative-ideation/SKILL.md) | Brainstorming and ideation techniques that generate the raw ideas this skill screens |
+| [pricing-models](../pricing-models/SKILL.md) | **Price** and perceived value (criterion 3, Value > Price) |
+| [financials](../financials/SKILL.md) | **Unit economics**, **gross profit per unit**, and **break-even** (criterion 5, Cost-Benefit) |
 
 ## Before You Start
 
@@ -273,7 +275,7 @@ Once the problem is specific and the cause is understood, write it as a problem 
 
 - People **WANT** your improvement (not just "that's cool")
 - **Willingness to pay** exists
-- **Value > Price** in the customer's mind
+- **Value > Price** in the customer's mind (→ [pricing-models](../pricing-models/SKILL.md))
 
 | Passes | Fails |
 |---|---|
@@ -298,7 +300,7 @@ Once the problem is specific and the cause is understood, write it as a problem 
 
 - The investment (time, money, effort) is worth the potential return
 - You can **acquire customers profitably**
-- **Unit economics are positive**
+- **Unit economics are positive** (gross profit per unit, break-even → [financials](../financials/SKILL.md))
 - A **path to profitability** exists
 
 | Passes | Fails |
@@ -485,3 +487,5 @@ Use this workflow whether the user is starting fresh, auditing an existing busin
 - **[customer-ecosystem](../customer-ecosystem/SKILL.md)**: map who suffers, who decides, and who pays.
 - **[customer-end-user-profile-and-persona](../customer-end-user-profile-and-persona/SKILL.md)**: turn the "clear user" into a concrete profile and persona.
 - **[creative-ideation](../creative-ideation/SKILL.md)**: generate more raw ideas when screening has emptied the pipeline.
+- **[pricing-models](../pricing-models/SKILL.md)**: find a price the customer sees as below the value delivered, and test it.
+- **[financials](../financials/SKILL.md)**: prove criterion 5 with gross margin, break-even, and cash flow.

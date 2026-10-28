@@ -16,8 +16,10 @@ Built on the open [Agent Skills specification](https://agentskills.io/specificat
 | [customer-interview](skills/customer-interview/) | Plans, scripts, conducts, and synthesizes customer interviews using ten interview rules, an annotated interview guide,... |
 | [customer-segmentation](skills/customer-segmentation/) | Customer entry point. Answers who is my customer: segment a broad market into groups that share a need, behavior, or... |
 | [customer-validation](skills/customer-validation/) | Tests a venture's assumptions about the problem, the customer/market, and the solution with real customers before more... |
+| [financials](skills/financials/) | Builds, reads, forecasts, and audits basic business financials in plain founder terms: income statement (P&L), cash... |
 | [market-research](skills/market-research/) | Plans, runs, and judges market research: primary vs. secondary sources, qualitative vs. quantitative data, method... |
 | [opportunity-id](skills/opportunity-id/) | Finds, digs into, and screens business opportunities, meaning problems worth solving for profit. Covers idea vs.... |
+| [pricing-models](skills/pricing-models/) | Recommends, defends, and tests a price. Covers what determines price, the right price from customer, business, and... |
 | [problem-statement](skills/problem-statement/) | The library entry point and starting point for any venture. Finds, diagnoses, writes, tests, and validates the problem... |
 | [value-proposition](skills/value-proposition/) | Builds, audits, and sharpens a value proposition: the statement of what benefit you provide, for whom, and how you do... |
 <!-- SKILLS:END -->

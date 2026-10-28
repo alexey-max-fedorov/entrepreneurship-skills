@@ -2,7 +2,7 @@
 name: customer-segmentation
 description: "Customer entry point. Answers who is my customer: segment a broad market into groups that share a need, behavior, or buying context, write testable segment hypotheses, and pick a beachhead market to win first and expand from. Use when the user says 'who is my customer', 'who should I target', 'segment my market', 'customer segments', 'target market', 'beachhead market', 'which customers first', 'our market is everyone', 'niche down', or is starting, auditing, or pivoting who a business serves. For stakeholder roles, see customer-ecosystem; for talking to customers, customer-interview; for testing whether they will buy, customer-validation; for the exact user, customer-end-user-profile-and-persona; for market size, market-research. Starts from problem-statement and opportunity-id."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Customer Segmentation
@@ -25,6 +25,7 @@ Before doing anything else, read the SKILL.md of every skill below that is not a
 | [value-proposition](../value-proposition/SKILL.md) | **Value sought** and **customer jobs/pains** are a segmentation dimension and a market-definition condition |
 | [business-model](../business-model/SKILL.md) | **Business Model Canvas** blocks (Customer Segments, Channels, Customer Relationships, Revenue) that segmentation feeds |
 | [creative-ideation](../creative-ideation/SKILL.md) | **Brainstorming** the 3-6 candidate markets for a beachhead |
+| [pricing-models](../pricing-models/SKILL.md) | **Pricing** by segment: willingness to pay as a segmentation dimension feeds the price and pricing model |
 
 ## Before You Start
 
@@ -79,6 +80,8 @@ Two groups of customers are **different segments** when they differ on any of th
 | **Service / relationship needs** | How much hand-holding they want | Career coaching vs. self-serve templates vs. one-on-one advising |
 | **Economics / profitability** | What serving them costs and earns | A photographer: an individual student vs. a fraternity shoot |
 | **Willingness to pay** | Whether and how much they will pay to solve it | A note-taking app vs. hiring a student to take notes |
+
+Segments that differ in willingness to pay can carry different prices; dynamic pricing and good-better-best tiers both work off those differences (→ [pricing-models](../pricing-models/SKILL.md)).
 
 Notes:
 - **Value sought** links to the value proposition you build for the segment (→ [value-proposition](../value-proposition/SKILL.md)).
@@ -406,3 +409,4 @@ Next skill to run:           _______________________________
 - **[value-proposition](../value-proposition/SKILL.md)** — once the beachhead is set, to design the value proposition for that segment's jobs, pains, and gains.
 - **[business-model](../business-model/SKILL.md)** — to carry the chosen segment into the Customer Segments block and the channels, relationships, and revenue blocks of the Business Model Canvas.
 - **[creative-ideation](../creative-ideation/SKILL.md)** — when you cannot come up with 3-6 candidate markets, or need fresh angles on where your customers gather.
+- **[pricing-models](../pricing-models/SKILL.md)** — once the beachhead is chosen, to price for that segment's willingness to pay.

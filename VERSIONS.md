@@ -4,19 +4,27 @@ Current versions of all skills. Agents can compare against local versions to che
 
 | Skill | Version | Last Updated |
 |-------|---------|--------------|
-| business-model | 1.0.0 | 2026-10-17 |
-| creative-ideation | 1.0.0 | 2026-10-17 |
-| customer-ecosystem | 1.0.0 | 2026-10-17 |
-| customer-end-user-profile-and-persona | 1.0.0 | 2026-10-17 |
-| customer-interview | 1.0.0 | 2026-10-17 |
-| customer-segmentation | 1.0.0 | 2026-10-17 |
-| customer-validation | 1.0.0 | 2026-10-17 |
-| market-research | 1.0.0 | 2026-10-17 |
-| opportunity-id | 1.0.0 | 2026-10-17 |
-| problem-statement | 1.0.0 | 2026-10-17 |
-| value-proposition | 1.0.0 | 2026-10-17 |
+| business-model | 1.0.1 | 2026-10-28 |
+| creative-ideation | 1.0.1 | 2026-10-28 |
+| customer-ecosystem | 1.0.1 | 2026-10-28 |
+| customer-end-user-profile-and-persona | 1.0.1 | 2026-10-28 |
+| customer-interview | 1.0.1 | 2026-10-28 |
+| customer-segmentation | 1.0.1 | 2026-10-28 |
+| customer-validation | 1.0.1 | 2026-10-28 |
+| financials | 1.0.0 | 2026-10-28 |
+| market-research | 1.0.1 | 2026-10-28 |
+| opportunity-id | 1.0.1 | 2026-10-28 |
+| pricing-models | 1.0.0 | 2026-10-28 |
+| problem-statement | 1.0.1 | 2026-10-28 |
+| value-proposition | 1.0.1 | 2026-10-28 |
 
 ## Changelog
+
+### 1.1.0 (2026-10-28)
+
+- Added `pricing-models`: price determinants, supply and demand, elasticity, all nine pricing models with advantages and disadvantages, combining models, pricing psychology, and price testing.
+- Added `financials`: income statement, cash flow statement, balance sheet, forecasting, break-even, and using financials to decide.
+- Added pointers to `pricing-models` and `financials` across the existing skills; `business-model` also gained growth mindset and openness to pivoting.
 
 ### 1.0.0 (2026-10-17)
 

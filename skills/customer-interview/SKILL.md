@@ -2,7 +2,7 @@
 name: customer-interview
 description: "Plans, scripts, conducts, and synthesizes customer interviews using ten interview rules, an annotated interview guide, an after-interview evidence record, and a Proceed / Pivot / Punt decision. Use when the user says 'customer interview', 'interview script', 'interview guide', 'what should I ask customers', 'teach me to interview customers', 'run a customer interview with me', 'review my interview questions', 'what did my interviews tell me', or 'should I pivot based on interviews'. For defining the problem see problem-statement; for who to interview see customer-segmentation; for the broader validation process see customer-validation."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Customer Interview
@@ -496,3 +496,4 @@ Surprises: labor scheduling is the bigger pain.
 - **[opportunity-id](../opportunity-id/SKILL.md)** — Go here after a Punt to find and screen a different problem worth solving.
 - **[creative-ideation](../creative-ideation/SKILL.md)** — Go here after a Pivot to generate new ways to adapt the idea to what customers actually said.
 - **[business-model](../business-model/SKILL.md)** — Go here once the need is validated to test how the idea makes money, using what interviews revealed about how customers decide and buy.
+- **[pricing-models](../pricing-models/SKILL.md)** — Go here when interviews surface what customers pay for alternatives, what makes them upgrade, or what would make them leave after a price increase.

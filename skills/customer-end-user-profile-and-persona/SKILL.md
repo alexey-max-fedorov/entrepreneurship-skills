@@ -2,7 +2,7 @@
 name: customer-end-user-profile-and-persona
 description: "Builds a research-based End User Profile (the fictional, specific user inside a defined segment) and turns it into a Persona (one real, interviewable person who embodies that profile), complete with profile questions, persona selection criteria, and a persona fact sheet. Use when the user says 'end user profile', 'who is my end user', 'customer profile', 'user persona', 'build a persona', 'persona fact sheet', 'describe my target user', 'who will actually use this', or wants to audit or revise an existing profile or persona. For who the customer is and choosing a segment or beachhead see customer-segmentation; for running the interviews see customer-interview; for buyer vs. user and other roles see customer-ecosystem."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Customer End User Profile & Persona
@@ -361,3 +361,4 @@ Backup persona: founder's cousin (runs a hair salon, has never groomed a dog).
 - **[problem-statement](../problem-statement/SKILL.md)** — go here to sharpen the problem or frustration and pain the profile records.
 - **[value-proposition](../value-proposition/SKILL.md)** — go here next to turn the user's job, pains, gains, and purchase criteria into a value proposition.
 - **[market-research](../market-research/SKILL.md)** — go here for the primary/secondary research behind the profile and to analyze the current alternatives the persona uses.
+- **[pricing-models](../pricing-models/SKILL.md)** — go here when the profile's budget, reason-to-buy, and current alternative need to become a price.

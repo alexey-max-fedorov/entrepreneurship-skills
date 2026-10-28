@@ -2,7 +2,7 @@
 name: problem-statement
 description: "The library entry point and starting point for any venture. Finds, diagnoses, writes, tests, and validates the problem a business solves: problem vs. solution, pain types, problem evidence, symptoms vs. root causes, Jobs-to-Be-Done, problem laddering, workarounds, four problem statement frameworks (Simple, Jobs-to-Be-Done, Empathy Based, Quantified), the Problem Statement Test, and problem validation with Proceed/Pivot/Punt. Use when the user says 'I have a startup idea', 'where do I start', 'what problem am I solving', 'write my problem statement', 'is this a real problem', 'root cause', 'why is my business struggling', 'should we pivot', or wants to start, audit, revise, or pivot any venture. Always load with opportunity-id. Related: customer-segmentation, customer-interview, customer-validation, market-research, value-proposition."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Problem Statement
@@ -634,3 +634,4 @@ To fix it: interview young workers about the last time money went wrong, listen 
 - **[value-proposition](../value-proposition/SKILL.md)** — Go here once the problem is validated to map customer jobs/pains/gains and differentiate your solution.
 - **[creative-ideation](../creative-ideation/SKILL.md)** — Go here only after the problem is defined, to brainstorm solutions to it.
 - **[business-model](../business-model/SKILL.md)** — Go here after the problem and value proposition hold, to design how the solution creates and captures value.
+- **[financials](../financials/SKILL.md)** — Go here when the solution's numbers (margins, break-even, cash) become evidence in a Proceed / Pivot / Punt call.

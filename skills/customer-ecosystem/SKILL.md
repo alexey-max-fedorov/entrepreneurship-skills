@@ -2,7 +2,7 @@
 name: customer-ecosystem
 description: "Maps the customer ecosystem, the network of stakeholders (end user, decision maker, economic buyer, influencer, champion, blocker) that shapes adoption and purchase decisions, and tailors message and evidence to each role across B2C and B2B. Use when the user says 'who actually buys this', 'map the stakeholders', 'customer ecosystem', 'buying committee', 'who signs the check', 'who could block the deal', 'B2B vs B2C buying', 'who should I interview'. For who the customer is and segments, see customer-segmentation; for interviews, customer-interview; for end user profiles, customer-end-user-profile-and-persona."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Customer Ecosystem
@@ -356,3 +356,4 @@ Use this sequence whether you are starting from scratch, auditing an existing go
 - **[value-proposition](../value-proposition/SKILL.md)** — Go here to tailor jobs, pains, gains, and differentiation for each stakeholder role.
 - **[business-model](../business-model/SKILL.md)** — Go here when who pays (the economic buyer) changes how the business earns revenue.
 - **[market-research](../market-research/SKILL.md)** — Go here to back B2B evidence (ROI, risk) and B2C influence audits with primary and secondary research.
+- **[pricing-models](../pricing-models/SKILL.md)** — Go here when the economic buyer needs a concrete price, and to set it from the value each role sees.

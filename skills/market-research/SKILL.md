@@ -2,7 +2,7 @@
 name: market-research
 description: "Plans, runs, and judges market research: primary vs. secondary sources, qualitative vs. quantitative data, method selection, the five market claims (demand, size, accessibility, competition, economics), competitive analysis, evidence triangulation, and the Proceed / Pivot / Punt scorecard. Use when the user says 'market research', 'market validation', 'is there a market for this', 'how big is the market', 'market sizing', 'who are my competitors', 'competitive analysis', 'secondary research', 'primary research', 'survey or interviews', 'find industry data', 'should I proceed or pivot', or wants to audit or revisit the market for an existing business. For the problem itself see problem-statement; for who the customer is see customer-segmentation; for running interviews see customer-interview; for commitment and solution evidence see customer-validation."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Market Research
@@ -24,6 +24,7 @@ Before doing anything else, read the SKILL.md of every skill below that is not a
 | [business-model](../business-model/SKILL.md) | The Economics test and "you want revenue" connect to **revenue models** and **business model assessment**. |
 | [customer-end-user-profile-and-persona](../customer-end-user-profile-and-persona/SKILL.md) | Secondary data on **customer demographics and spending** feeds the **end user profile** and **persona**. |
 | [customer-ecosystem](../customer-ecosystem/SKILL.md) | Economics and Accessibility depend on knowing **who pays vs. who uses** (**stakeholder roles**). |
+| [pricing-models](../pricing-models/SKILL.md) | **Competitive pricing** and the customer's reference price: competitor prices gathered here feed the pricing decision |
 
 ## Before You Start
 
@@ -373,6 +374,8 @@ The **Competition** claim is that current alternatives leave a meaningful gap. *
 | **Why they choose, switch, delay, or do nothing** | Primary: interviews | The decision drivers and switching barriers |
 | **What alternatives cost them** | Primary + secondary | Economics of the status quo |
 
+Competitor prices also set the customer's reference price for competitive pricing (→ [pricing-models](../pricing-models/SKILL.md)).
+
 Competitive analysis template:
 
 ```
@@ -569,3 +572,5 @@ When auditing an existing business, run the same steps but lean on internal tran
 - **[customer-validation](../customer-validation/SKILL.md)** — Go here after Proceed to gather commitment evidence and run solution validation.
 - **[value-proposition](../value-proposition/SKILL.md)** — Go here to turn the meaningful gap found in competitive analysis into a differentiated value proposition.
 - **[business-model](../business-model/SKILL.md)** — Go here to build and assess the revenue model on top of the Economics evidence.
+- **[pricing-models](../pricing-models/SKILL.md)** — Go here to turn competitor and substitute prices into a pricing model and a recommended price.
+- **[financials](../financials/SKILL.md)** — Go here to turn comparables, industry COGS and margin averages, and market size into a P&L forecast and break-even.

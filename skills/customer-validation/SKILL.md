@@ -2,7 +2,7 @@
 name: customer-validation
 description: "Tests a venture's assumptions about the problem, the customer/market, and the solution with real customers before more time or money is spent. Use when the user says 'validate my idea', 'customer validation', 'market validation', 'solution validation', 'is there demand', 'will people pay for this', 'test my assumptions', 'how many interviews do I need', 'where do I find people to interview', or 'did my validation prove anything'. For defining the problem see problem-statement; for who the customer is see customer-segmentation; for running the conversations see customer-interview; for market sizing and competitors see market-research."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Customer Validation
@@ -23,6 +23,8 @@ Before doing anything else, read the SKILL.md of every skill below that is not a
 | [value-proposition](../value-proposition/SKILL.md) | **Value proposition**, which market validation makes more focused |
 | [business-model](../business-model/SKILL.md) | **Business model**, the basis for judging whether a solution is **viable** (can support a business) and what price you need to charge |
 | [customer-ecosystem](../customer-ecosystem/SKILL.md) | **Stakeholder roles**, so willingness-to-pay evidence comes from the person who actually pays |
+| [pricing-models](../pricing-models/SKILL.md) | **Price** and **price testing** (A/B tests, willingness-to-pay surveys, pilot markets): how the price you need to charge is set and defended |
+| [financials](../financials/SKILL.md) | **Break-even** and **margins**: whether the price you need to charge supports a viable business |
 
 ## Before You Start
 
@@ -32,7 +34,7 @@ Get these answers from the user (or from context) before you plan or judge any v
 2. **The segment.** What customer group do they believe has this problem (→ [customer-segmentation](../customer-segmentation/SKILL.md))?
 3. **The end-user profile.** Which specific people inside that group would they talk to (→ [customer-end-user-profile-and-persona](../customer-end-user-profile-and-persona/SKILL.md))?
 4. **Their assumptions.** What do they "think" they know? Get the raw list, even if messy.
-5. **The price.** What price do they need to charge for the venture to work?
+5. **The price.** What price do they need to charge for the venture to work? Setting and defending that price is → [pricing-models](../pricing-models/SKILL.md); the volume it needs to break even is → [financials](../financials/SKILL.md).
 6. **Existing evidence.** Who have they already talked to (how many, and were they friends and family)? What did those people actually do, pay for, or try before?
 7. **The situation.** Pre-build idea, product already built, an existing business being audited or optimized, or a pivot under consideration. Validation applies to all of these. The situation only changes which assumptions are riskiest right now.
 
@@ -162,7 +164,7 @@ Test the solution against all three. Failing any one is a reason to change it.
 |---|---|---|
 | **Desirable** | Do customers want it? | Evidence that the need exists and the solution addresses it, ideally backed by what people have already done, paid for, or tried |
 | **Feasible** | Can you deliver it? | Evidence that you can actually build, source, staff, or operate it |
-| **Viable** | Can it support a business? | Evidence that customers will pay the price you need to charge, in a segment large and reachable enough (→ [business-model](../business-model/SKILL.md)) |
+| **Viable** | Can it support a business? | Evidence that customers will pay the price you need to charge, in a segment large and reachable enough (→ [business-model](../business-model/SKILL.md), [pricing-models](../pricing-models/SKILL.md), [financials](../financials/SKILL.md)) |
 
 ### Solution Check Template
 
@@ -352,3 +354,5 @@ Friends/family allowed?  Practice only — not counted as evidence.
 - **[business-model](../business-model/SKILL.md)**: go here to confirm the solution is viable and that the price you need to charge supports a business.
 - **[creative-ideation](../creative-ideation/SKILL.md)**: go here when validation says the solution must change and you need new solution options to test.
 - **[opportunity-id](../opportunity-id/SKILL.md)**: go here if validation suggests the opportunity itself is weak and you need to screen other opportunities.
+- **[pricing-models](../pricing-models/SKILL.md)**: go here to set, defend, and test the price you need to charge.
+- **[financials](../financials/SKILL.md)**: go here to check that the price and volume validation supports actually break even and leave cash in the bank.

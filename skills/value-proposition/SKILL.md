@@ -2,7 +2,7 @@
 name: value-proposition
 description: "Builds, audits, and sharpens a value proposition: the statement of what benefit you provide, for whom, and how you do it uniquely well. Covers the Target Customer + Problem/Job + Meaningful Benefit + Differentiator formula, logical vs. emotional buying, customer jobs/pains/gains, functional/economic/emotional-social benefits, differentiation vs. price, features vs. benefits, and common VP mistakes. Use when the user says 'value proposition', 'value prop', 'VP', 'why us', 'why would anyone buy this', 'what makes us different', 'differentiator', 'positioning statement', 'tagline', 'unique selling point', or 'rewrite my pitch'. For the problem itself see problem-statement; for who the customer is see customer-segmentation; for competitors see market-research; for the full model see business-model."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Value Proposition
@@ -22,6 +22,7 @@ Before doing anything else, read the SKILL.md of every skill below that is not a
 | [business-model](../business-model/SKILL.md) | The **Business Model Canvas**, where the value proposition sits as one block of a viable business |
 | [customer-interview](../customer-interview/SKILL.md) | **Customer interviews** that surface real jobs, problems, and the benefits customers actually care about |
 | [customer-validation](../customer-validation/SKILL.md) | **Customer validation**, which tests whether the VP actually convinces the target customer |
+| [pricing-models](../pricing-models/SKILL.md) | **Pricing models** (value-based, prestige, competitive): answering "why this price?" and pricing to the value the VP promises |
 
 ## Before You Start
 
@@ -70,7 +71,7 @@ Before buying anything, people ask themselves:
 
 1. **Why this product?**
 2. **Why this company?**
-3. **Why this price?**
+3. **Why this price?** (How the number itself is set: → [pricing-models](../pricing-models/SKILL.md).)
 
 A strong VP answers all three. If it only answers the first, the customer may still buy the category from someone else.
 
@@ -235,6 +236,8 @@ Ask: **How do you want customers to feel about choosing you?** The answer usuall
 - **Low price is not usually a great strategy.** A competitor can always cut deeper, and price alone gives the customer no reason to stay.
 
 **Being cheaper does not equal being differentiated.**
+
+When price is part of the story, the pricing model has to match the VP: value-based pricing captures differentiated value, prestige pricing makes the price itself part of the value proposition, and pricing a lot lower than rivals raises a quality question (→ [pricing-models](../pricing-models/SKILL.md)).
 
 When price *is* part of the story, pair it with something else. Compare two slide examples:
 
@@ -427,3 +430,4 @@ Note: claims like "paid days sooner" must be validated with real customers befor
 - **[business-model](../business-model/SKILL.md)**: go here to place the finished VP into the Business Model Canvas and check the business around it is viable.
 - **[creative-ideation](../creative-ideation/SKILL.md)**: go here when you need to brainstorm new differentiators or benefit angles.
 - **[opportunity-id](../opportunity-id/SKILL.md)**: go here if the VP keeps collapsing because the underlying opportunity may not be worth pursuing.
+- **[pricing-models](../pricing-models/SKILL.md)**: go here to set a price that captures the value the VP promises and answers "why this price?"

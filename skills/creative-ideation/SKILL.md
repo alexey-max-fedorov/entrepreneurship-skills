@@ -2,7 +2,7 @@
 name: creative-ideation
 description: "Generates and organizes solution ideas through brainstorming, reverse thinking, mind mapping, collaboration, and the SCAMPER method, anchored to a defined problem statement. Use when the user says 'I dont even know where to begin', 'brainstorm ideas', 'help me ideate', 'run SCAMPER', 'reverse brainstorm', 'mind map this', 'where do business ideas come from', or needs fresh ideas to solve a business problem (traffic, retention, training time, costs). Not a substitute for a problem statement; see problem-statement first, opportunity-id to screen ideas, customer-validation to test them."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Creative Ideation
@@ -374,3 +374,4 @@ Then test what survives with real customers (→ [customer-validation](../custom
 - **[business-model](../business-model/SKILL.md)** — Go here when an idea swaps the business model, or to weigh franchise and licensing routes.
 - **[value-proposition](../value-proposition/SKILL.md)** — Go here to turn a surviving idea into a value proposition and differentiate it.
 - **[customer-validation](../customer-validation/SKILL.md)** — Go here to test shortlisted ideas with real customers before building.
+- **[pricing-models](../pricing-models/SKILL.md)** — Go here when an idea changes the price itself (off-peak pricing, a bundle, a premium tier) to choose and test the pricing model.
